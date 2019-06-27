@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Restaurante</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/style.css">
+	<script src="/js/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+			<div class="card card-signin my-5">
+				<div class="card-body">
+					<h5 class="card-title text-center">Cadastrar Prato</h5>
+					<form class="form-signin" action="/cadastrarPratos/salvarPrato" method="post" th:object="${prato}" enctype="multipart/form-data">
+						<input type="hidden" th:field="*{idPrato}">
+						<div class="form-label-group">
+							<input type="text" th:field="*{nome}" class="form-control" placeholder="Nome" required autofocus>
+													
+						</div>
+						<div class="form-label-group">
+							<input class="btn btn-lg btn-primary btn-block text-uppercase form-control" type="file" name="imagem" required>
+												
+						</div>
+						<div class="form-label-group">
+							<input type="text" th:field="*{preco}" class="form-control" placeholder="Preço" required>
+												
+						</div>
+					
+						<button class="btn btn-lg btn-success btn-block text-uppercase" type="submit">Cadastrar</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

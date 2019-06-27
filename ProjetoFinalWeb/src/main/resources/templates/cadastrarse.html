@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Restaurante</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/style.css">
+	<script src="/js/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+			<div class="card card-signin my-5">
+				<div class="card-body">
+					<h5 class="card-title text-center">Cadastro</h5>
+					<form class="form-signin" action="/cadastrarse/salvarUsuario" method="post" th:object="${usuario}">
+						<input type="hidden" th:field="*{id}">
+						<div class="form-label-group">
+							<input type="text" th:field="*{nome}" class="form-control" placeholder="Nome" required autofocus>
+													
+						</div>
+						<div class="form-label-group">
+							<input type="text" th:field="*{cpf}" class="form-control" placeholder="CPF" required>
+													
+						</div>
+						<div class="form-label-group">
+							<input type="text" th:field="*{dataDeNascimento}" class="form-control" placeholder="Data de Nascimento" required>
+													
+						</div>
+						<div class="form-label-group">
+							<input type="text" th:field="*{endereco}" class="form-control" placeholder="Endereço" required>
+												
+						</div>
+						<div class="form-label-group">
+							<input type="text" th:field="*{email}" class="form-control" placeholder="Email" required>
+														
+						</div>
+						<div class="form-label-group">
+							<input type="password" th:field="*{senha}" class="form-control" placeholder="Senha" required>
+														
+						</div>
+						
+						
+						<button class="btn btn-lg btn-success btn-block text-uppercase" type="submit">Cadastrar-se</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
