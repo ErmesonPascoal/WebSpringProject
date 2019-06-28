@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.ufc.br.model.Carrinho;
 import com.ufc.br.model.Prato;
 import com.ufc.br.service.PratoService;
 
@@ -18,10 +19,14 @@ public class PratoController {
 	@Autowired
 	private PratoService pratoService; 
 	
+	Carrinho carrinho = Carrinho.getInstance();
+	
 	@RequestMapping("/pratos")
 	public ModelAndView listarPratos() {
 		List<Prato> pratos = pratoService.getPratos();
 		ModelAndView mv = new ModelAndView("listagemPratos");
+		mv.addObject("listaDePratosNoPedido", carrinho.getPratos());
+		mv.addObject("preco", carrinho.getPreco());
 		mv.addObject("listaDePratos", pratos);
 		return mv;
 	}

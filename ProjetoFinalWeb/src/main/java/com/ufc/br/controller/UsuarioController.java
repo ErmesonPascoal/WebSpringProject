@@ -27,7 +27,7 @@ public class UsuarioController {
 	public ModelAndView salvarUsuario(Usuario usuario) {
 		
 		usuarioService.cadastrarUsuario(usuario);
-		ModelAndView mv = new ModelAndView("redirect:/listarUsuarios");
+		ModelAndView mv = new ModelAndView("redirect:/pratos");
 		return mv;
 	}
 	
