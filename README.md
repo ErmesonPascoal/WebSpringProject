@@ -1,1 +1,1 @@
-usado pra testes.
+Projeto feito para disciplina de desenvolvimento web
